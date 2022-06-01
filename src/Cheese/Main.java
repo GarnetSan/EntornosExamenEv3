@@ -1,8 +1,8 @@
 /*
-*	grupo  :
-*	alumno :
-*	n.exp. :
-*	fecha  :
+*	grupo  : GDAM1-1
+*	alumno : Miguel Rubio Tardieu
+*	n.exp. : 7244
+*	fecha  : 01/06/2022
  */
 package Cheese;
 
