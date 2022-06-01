@@ -59,7 +59,7 @@ public class ListaProductos {
      */
     public Producto addProducto(Producto prod) {
         
-        if(prod==null){
+        if(check_null(prod.getcode())){
             System.out.println("Producto no inicializado");
             return null;
         }
