@@ -59,6 +59,11 @@ public class ListaProductos {
      */
     public Producto addProducto(Producto prod) {
         
+        if(check_null(prod.getcode())){
+            System.out.println("Producto no inicializado");
+            return null;
+        }
+        
         if (listaP.containsKey(prod.getcode())) {
             // System.out.println("Producto con código duplicado");
             return null;
@@ -75,6 +80,11 @@ public class ListaProductos {
      * @return Devuelve el producto eliminado, o "null" si no estaba en el HashMap
      */
     public Producto eliminarProducto(String codigo) { 
+        
+        if(check_null(codigo)){
+            System.out.println("Codigo no válido");
+            return null;
+        }
         
         Producto prod = buscarProducto(codigo);
         if (prod != null) {
@@ -93,6 +103,11 @@ public class ListaProductos {
      */
     public Producto buscarProducto(String codigo) { 
         Producto prod = null;
+        
+        if(check_null(codigo)){
+            System.out.println("Codigo no válido");
+            return null;
+        }
         
         if (!listaP.containsKey(codigo)) {
             return prod;
