@@ -25,11 +25,18 @@ public class ListaProductos {
     private static int n = 0;
 
 
-    
+    /**
+     * Devuelve el número de productos dentro de la lista
+     * @return Numero de productos listados
+     */
     private int getN() {
         return n;
     }
 
+    /**
+     * Cambia el número de productos en la lista
+     * @param n Nuevo número de productos
+     */
     private void setN(int n) {
         this.n = n;
     }
@@ -43,6 +50,13 @@ public class ListaProductos {
         if (campo.replace(" ","") == "")  return true; else return false;
     }
 
+    /**
+     * Añade un nuevo producto al HashMap de productos (en el caso de que no 
+     * esté en ella).
+     * @param prod Objeto de tipo Producto a añadir en el HashMap
+     * @return Devuelve el producto insertado (mismo que el parametro de 
+     * entrada) o "null" en el caso de que ya estuviese en el HashMap
+     */
     public Producto addProducto(Producto prod) {
         
         if (listaP.containsKey(prod.getcode())) {
@@ -55,6 +69,11 @@ public class ListaProductos {
         return prod;
     }
 
+    /**
+     * Elimina un producto de la lista a partir de su código de control en el HashMap (si está)
+     * @param codigo Código identificador del producto a eliminar
+     * @return Devuelve el producto eliminado, o "null" si no estaba en el HashMap
+     */
     public Producto eliminarProducto(String codigo) { 
         
         Producto prod = buscarProducto(codigo);
@@ -66,6 +85,12 @@ public class ListaProductos {
         return prod;
     }
 
+    /**
+     * Busca un producto en el HashMap a partir de un código identificador
+     * @param codigo Código de idenificación del producto
+     * @return Devuelve el producto si se encuentra el producto en el HashMap o 
+     * null en el caso de que el código no esté en él
+     */
     public Producto buscarProducto(String codigo) { 
         Producto prod = null;
         
@@ -77,12 +102,20 @@ public class ListaProductos {
         }
     }
 
+    /**
+     * Exporta una lista dinámica de todos los productos contenidos en el HashMap
+     * @return ArrayList de los productos en la lista
+     */
     public ArrayList<Producto> getProductos() {
         ArrayList<Producto> prodsList = new ArrayList<>();
         prodsList.addAll(listaP.values());
         return prodsList;
     }
     
+    /**
+     * Hace llamada al método getN para conseguir el número de productos en la lista
+     * @return Numero de productos listados
+     */
     public int totalProductos(){
             return this.getN();
     }
